@@ -7,6 +7,12 @@ Pentaho Data Integration (PDI) provides the Extract, Transform, and Load (ETL) c
 
 This version of docker image doesn't permits to execute PDI UI for create new transformations or jobs.
 
+# Index
+1. [Before start](https://github.com/lorenzoli/docker-pdi-ce#before-start)
+2. [Clone project](https://github.com/lorenzoli/docker-pdi-ce#clone-projects)
+3. [Build image](https://github.com/lorenzoli/docker-pdi-ce#build-image)
+4. [Run transformation](https://github.com/lorenzoli/docker-pdi-ce#run-transformation) or [Run job](https://github.com/lorenzoli/docker-pdi-ce#run-job)
+
 **PDI-CE 8.3.0.0-371** require:
 - OpenJDK 8
 - OpenJRE 8.
