@@ -10,19 +10,16 @@ MAINTAINER Lorenzo Zoli (zoli.lorenzo1899@gmail.com)
 # set environment variables
 ENV PDI_VER 8.3.0.0-371
 ENV PDI /opt/app
+WORKDIR $PDI
 
 # install curl
+# download PDI from sourceforge.net version 8.3.0.0-371
+# create main directories and do permission to execute scripts
 RUN apt-get update \
     && apt-get install -y curl \
     && apt-get -y autoclean \
-    && rm -rf /var/lib/apt/lists/*
-
-
-WORKDIR $PDI
-
-# download PDI from sourceforge.net version 8.3.0.0-371
-# create main directories and do permission to execute scripts
-RUN curl -L https://sourceforge.net/projects/pentaho/files/Pentaho%208.3/client-tools/pdi-ce-${PDI_VER}.zip/download -o pdi.gz \
+    && rm -rf /var/lib/apt/lists/* \
+	&& curl -L https://sourceforge.net/projects/pentaho/files/Pentaho%208.3/client-tools/pdi-ce-${PDI_VER}.zip/download -o pdi.gz \
 	&& tar xzf $PDI/pdi.gz \
 	&& rm $PDI/pdi.gz \
 	&& mkdir /opt/transformations \
