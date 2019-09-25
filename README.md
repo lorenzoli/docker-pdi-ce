@@ -1,4 +1,4 @@
-# docker-pdi
+# docker-pdi-ce
 Dockerize [Pentaho Data Integration CE](https://community.hitachivantara.com/s/article/data-integration-kettle) version 8.3.0.0-371.
 Docker image version 1.0.0.
 
@@ -7,7 +7,7 @@ Pentaho Data Integration (PDI) provides the Extract, Transform, and Load (ETL) c
 
 This version of docker image doesn't permits to execute PDI UI for create new transformations or jobs.
 
-**Pdi 8.3.0.0-370** require:
+**PDI-CE 8.3.0.0-371** require:
 - OpenJDK 8
 - OpenJRE 8.
 
@@ -24,7 +24,7 @@ Available list of commands:
 
 # Clone projects
 ```
-$ git clone https://github.com/lorenzoli/docker-pdi
+$ git clone https://github.com/lorenzoli/docker-pdi-ce
 ```
 
 # Build image
@@ -37,23 +37,22 @@ $ ./goku.sh build
 $ docker build --tag=pdi-ce .
 ```
 
-# Run job
-**From goku.sh**
-```
-$ ./goku.sh runj <path-to-kjb-file>
-```
-**From docker cl**
-```
-$ docker runj pdi-ce sh ./opt/App/kitchen.sh -file=<path-to-kjb-file>
-```
-
-
 # Run transformation
 **From goku.sh**
 ```
-$ ./goku.sh runt <path-to-ktr-file>.ktr
+$ ./goku.sh runt <path-to-ktr-file> <optional-parameters>
 ```
 **From docker cl**
 ```
-$ docker runt pdi-ce sh ./opt/App/pan.sh -file=<path-to-ktr-file>.ktr
+$ docker run -v <absolute-path-to-ktr-folder>:/opt/transformations pdi-ce sh ./opt/app/pan.sh -file=<path-to-ktr-file>.ktr <optional-parameters>
+```
+
+# Run job
+**From goku.sh**
+```
+$ ./goku.sh runj <path-to-kjb-file> <optional-parameters>
+```
+**From docker cl**
+```
+$ docker run -v <path-to-kjb-folder>:/opt/jobs pdi-ce sh ./opt/app/kitchen.sh -file=<path-to-kjb-file> <optional-parameters>
 ```
