@@ -42,7 +42,9 @@ RUN mkdir transformations && \
 	mkdir jobs && \
 	chmod 775 $PDI -R && \
 	chmod +x $PDI/data-integration/kitchen.sh && \
-	chmod +x $PDI/data-integration/pan.sh
+	chmod +x $PDI/data-integration/pan.sh && \
+	rm -rf /opt/data-integration/samples && \
+	rm -rf /opt/data-integration/docs
 
 # Setup JAVA_HOME, this is useful for docker commandline
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
