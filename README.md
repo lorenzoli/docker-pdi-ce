@@ -1,6 +1,6 @@
 # docker-pdi-ce
 Dockerize [Pentaho Data Integration CE](https://community.hitachivantara.com/s/article/data-integration-kettle) version 8.3.0.0-371.
-Docker image version 1.0.0.
+Docker image version 1.0.1.
 
 # About
 Pentaho Data Integration (PDI) provides the Extract, Transform, and Load (ETL) capabilities that facilitates the process of capturing, cleansing, and storing data using a uniform and consistent format that is accessible and relevant to end users and IoT technologies.
@@ -49,7 +49,8 @@ Before run transformation/job you have need to create them with PDI-UI or PDI-xm
 After that the best usage method is the following:
 1. create jobs or transformations folder
 2. create .kjb or .ktr on this folders
-3. run goku script with job/transformation path
+3. run goku script with job/transformation path.
+
 ## Run transformation
 **From goku.sh**
 ```
