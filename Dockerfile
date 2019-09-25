@@ -3,7 +3,7 @@
 # Created: 20190925
 # Last Update: 20190925
 # Description: Dockerize [Pentaho Data Integration CE](https://community.hitachivantara.com/s/article/data-integration-kettle) version 8.3.0.0-371.
-# Version: 1.1.0
+# Version: 1.1.1
 FROM ubuntu:18.04
 MAINTAINER Lorenzo Zoli (zoli.lorenzo1899@gmail.com)
 
@@ -32,19 +32,19 @@ RUN apt-get update && \
 
 # download PDI from sourceforge.net version 8.3.0.0-371
 # extract and remove .zip previous download
-RUN curl -L https://sourceforge.net/projects/pentaho/files/Pentaho%208.3/client-tools/pdi-ce-${PDI_VER}.zip/download -o /opt/pdi.zip \
-	&& unzip /opt/pdi.zip \
-	&& rm /opt/pdi.zip
+RUN curl -L https://sourceforge.net/projects/pentaho/files/Pentaho%208.3/client-tools/pdi-ce-${PDI_VER}.zip/download -o /tmp/pdi.zip && \
+	unzip -q /tmp/pdi.zip -d ${PDI} && \
+	rm /tmp/pdi.zip && \
+	rm -rf ${PDI}/data-integration/samples && \
+	rm -rf ${PDI}/data-integration/docs
 
-# create main directories and do permission to execute scripts
+# create directories and do permission to execute scripts
 WORKDIR $PDI
 RUN mkdir transformations && \
 	mkdir jobs && \
-	chmod 775 $PDI -R && \
-	chmod +x $PDI/data-integration/kitchen.sh && \
-	chmod +x $PDI/data-integration/pan.sh && \
-	rm -rf /opt/data-integration/samples && \
-	rm -rf /opt/data-integration/docs
+	chmod 775 ${PDI} -R && \
+	chmod +x ${PDI}/data-integration/kitchen.sh && \
+	chmod +x ${PDI}/data-integration/pan.sh
 
 # Setup JAVA_HOME, this is useful for docker commandline
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/

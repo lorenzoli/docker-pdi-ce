@@ -1,6 +1,6 @@
 # docker-pdi-ce
 Dockerize [Pentaho Data Integration CE](https://community.hitachivantara.com/s/article/data-integration-kettle) version 8.3.0.0-371.
-Docker image version 1.1.0.
+Docker image version 1.1.1.
 
 # About
 Pentaho Data Integration (PDI) provides the Extract, Transform, and Load (ETL) capabilities that facilitates the process of capturing, cleansing, and storing data using a uniform and consistent format that is accessible and relevant to end users and IoT technologies.
