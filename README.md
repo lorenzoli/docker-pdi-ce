@@ -1,5 +1,5 @@
 # docker-pdi
-Dockerize [Pentaho Data Integration CE](https://community.hitachivantara.com/s/article/data-integration-kettle) version 8.3.0.0-370.
+Dockerize [Pentaho Data Integration CE](https://community.hitachivantara.com/s/article/data-integration-kettle) version 8.3.0.0-371.
 Docker image version 1.0.0.
 
 # About
@@ -11,16 +11,21 @@ This version of docker image doesn't permits to execute PDI UI for create new tr
 - OpenJDK 8
 - OpenJRE 8.
 
-# Download resources
-```
-$ git clone https://github.com/lorenzoli/docker-pdi
-```
+# Before start
 ## What is goku.sh ?
-**goku.sh** is a bash script that simplify usage of *docker-pdi*.
+**goku.sh** is a bash script that simplify usage of *docker-pdi-ce*.
 Available list of commands:
 - **build**: this command build docker image from Dockerfile;
 - **runt path-to-ktr-file**: this command run transformation file from docker container;
 - **runj path-to-kjb-file**: this command run job file from docker container;
+- **kill**: clean all images, containers and more.
+## Why image required 3.5 GB of disk space ?
+**docker-pdi-ce** image is based on Ubuntu 18.04 with Java8 and PDI that increment required disk space.
+
+# Clone projects
+```
+$ git clone https://github.com/lorenzoli/docker-pdi
+```
 
 # Build image
 **From goku.sh**
