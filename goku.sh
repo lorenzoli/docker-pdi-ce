@@ -31,7 +31,7 @@ case $1 in
             # run transformation
             # map volume from path to opt/transformations on container
             # run ktr file on container with pan.sh script
-            docker run -v ${path}:/opt/transformations pdi-ce sh /opt/app/pan.sh -file=/opt/transformations/${filename} $3
+            docker run -v ${path}:/opt/transformations pdi-ce sh /opt/data-integration/pan.sh -file=/opt/transformations/${filename} $3
 
             # remove not used images and containers
             echo "Clean system..."
@@ -55,7 +55,7 @@ case $1 in
             # run job
             # map volume from path to opt/jobs on container
             # run kjb file on container with kitchen.sh script
-            docker run -v ${path}:/opt/jobs pdi-ce sh /opt/app/kitchen.sh -file=/opt/jobs/${filename} $3
+            docker run -v ${path}:/opt/jobs pdi-ce sh /opt/data-integration/kitchen.sh -file=/opt/jobs/${filename} $3
             
             # remove not used images and containers
             echo "Clean system..."

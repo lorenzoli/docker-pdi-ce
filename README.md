@@ -1,6 +1,6 @@
 # docker-pdi-ce
 Dockerize [Pentaho Data Integration CE](https://community.hitachivantara.com/s/article/data-integration-kettle) version 8.3.0.0-371.
-Docker image version 1.0.1.
+Docker image version 1.1.0.
 
 # About
 Pentaho Data Integration (PDI) provides the Extract, Transform, and Load (ETL) capabilities that facilitates the process of capturing, cleansing, and storing data using a uniform and consistent format that is accessible and relevant to end users and IoT technologies.
@@ -18,7 +18,7 @@ This version of docker image doesn't permits to execute PDI UI for create new tr
 - OpenJRE 8.
 
 # Before start
-## Why image required >2 GB of disk space ?
+## Why image required >2GB of disk space ?
 **docker-pdi-ce** image is based on Ubuntu 18.04 with Java8 and PDI that increment required disk space.
 ## What is goku.sh ?
 **goku.sh** is a bash script that simplify usage of *docker-pdi-ce*.
