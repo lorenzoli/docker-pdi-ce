@@ -18,6 +18,8 @@ This version of docker image doesn't permits to execute PDI UI for create new tr
 - OpenJRE 8.
 
 # Before start
+## Why image required >2 GB of disk space ?
+**docker-pdi-ce** image is based on Ubuntu 18.04 with Java8 and PDI that increment required disk space.
 ## What is goku.sh ?
 **goku.sh** is a bash script that simplify usage of *docker-pdi-ce*.
 Available list of commands:
@@ -25,8 +27,6 @@ Available list of commands:
 - **runt path-to-ktr-file**: this command run transformation file from docker container;
 - **runj path-to-kjb-file**: this command run job file from docker container;
 - **kill**: clean all images, containers and more.
-## Why image required >2 GB of disk space ?
-**docker-pdi-ce** image is based on Ubuntu 18.04 with Java8 and PDI that increment required disk space.
 
 # Clone projects
 ```
