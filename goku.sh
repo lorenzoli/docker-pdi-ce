@@ -103,15 +103,18 @@ case $1 in
         fi
         ;;
     help)
+        echo ""
         echo "usage: ./goku.sh [option] [params]"
+        echo ""
         echo "goku script options:"
         echo "build     create docker image with java8 and pdi"
         echo "runt      execute specified transformations"
         echo "runj      execute specified job"
         echo ""
         echo "goku accept standard parameters of kitchen.sh and pan.sh"
-        echo "example: -param:firstParam=test"
-        echo "N.B: Before use params you have need to configured on transformation or job !"
+        echo "  example: -param:firstParam=test"
+        echo "N.B: Before use parameters you have need to configured on transformation or job !"
+        echo ""
         ;;
     *)
         echo "Command not found"

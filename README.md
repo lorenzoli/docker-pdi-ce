@@ -11,7 +11,7 @@ This version of docker image doesn't permits to execute PDI UI for create new tr
 1. [Before start](https://github.com/lorenzoli/docker-pdi-ce#before-start)
 2. [Clone project](https://github.com/lorenzoli/docker-pdi-ce#clone-projects)
 3. [Build image](https://github.com/lorenzoli/docker-pdi-ce#build-image)
-4. [Run transformation](https://github.com/lorenzoli/docker-pdi-ce#run-transformation) or [Run job](https://github.com/lorenzoli/docker-pdi-ce#run-job)
+4. [Usage](https://github.com/lorenzoli/docker-pdi-ce#usage)
 
 **PDI-CE 8.3.0.0-371** require:
 - OpenJDK 8
@@ -43,7 +43,14 @@ $ ./goku.sh build
 $ docker build --tag=pdi-ce .
 ```
 
-# Run transformation
+# Usage
+Before run transformation/job you have need to create them with PDI-UI or PDI-xml syntax.
+
+After that the best usage method is the following:
+1. create jobs or transformations folder
+2. create .kjb or .ktr on this folders
+3. run goku script with job/transformation path
+## Run transformation
 **From goku.sh**
 ```
 $ ./goku.sh runt <path-to-ktr-file> <optional-parameters>
@@ -53,7 +60,7 @@ $ ./goku.sh runt <path-to-ktr-file> <optional-parameters>
 $ docker run -v <absolute-path-to-ktr-folder>:/opt/transformations pdi-ce sh ./opt/app/pan.sh -file=<path-to-ktr-file>.ktr <optional-parameters>
 ```
 
-# Run job
+## Run job
 **From goku.sh**
 ```
 $ ./goku.sh runj <path-to-kjb-file> <optional-parameters>
