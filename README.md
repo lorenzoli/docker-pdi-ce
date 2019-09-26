@@ -22,8 +22,8 @@ This version of docker image doesn't permits to execute PDI UI for create new tr
 # Before start
 ## Why image required >2GB of disk space ?
 **docker-pdi-ce** image is based on Ubuntu 18.04 with Java8 and PDI that increment required disk space.
-## What is goku.sh ?
-**goku.sh** is a bash script that simplify usage of *docker-pdi-ce*.
+## What is ermes.sh ?
+**ermes.sh** is a bash script that simplify usage of *docker-pdi-ce*.
 Available list of commands:
 - **build**: this command build docker image from Dockerfile;
 - **runt path-to-ktr-file**: this command run transformation file from docker container;
@@ -36,9 +36,9 @@ $ git clone https://github.com/lorenzoli/docker-pdi-ce
 ```
 
 # Build image
-**From goku.sh**
+**From ermes.sh**
 ```
-$ ./goku.sh build
+$ ./ermes.sh build
 ```
 **From docker cl**
 ```
@@ -50,12 +50,12 @@ Before run transformation/job you have need to create them with PDI-UI or PDI-xm
 After that the best usage method is the following:
 1. create jobs or transformations folder
 2. create .kjb or .ktr on this folders
-3. run goku script with job/transformation path.
+3. run script with job/transformation path.
 
 ## Run transformation
-**From goku.sh**
+**From ermes.sh**
 ```
-$ ./goku.sh runt <path-to-ktr-file> <optional-parameters>
+$ ./ermes.sh runt <path-to-ktr-file> <optional-parameters>
 ```
 **From docker cl**
 ```
@@ -63,7 +63,7 @@ $ docker run -v <absolute-path-to-ktr-folder>:/opt/transformations pdi-ce sh ./o
 ```
 
 ## Run job
-**From goku.sh**
+**From ermes.sh**
 ```
 $ ./goku.sh runj <path-to-kjb-file> <optional-parameters>
 ```
