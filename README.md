@@ -5,7 +5,9 @@ Docker image version 1.1.1.
 # About
 Pentaho Data Integration (PDI) provides the Extract, Transform, and Load (ETL) capabilities that facilitates the process of capturing, cleansing, and storing data using a uniform and consistent format that is accessible and relevant to end users and IoT technologies.
 
-This version of docker image doesn't permits to execute PDI UI for create new transformations or jobs.
+This version of docker image doesn't permits to execute PDI UI for create new transformations or jobs but allow to execute them when call **kitchen.sh** or **pan.sh**.<br>
+
+[Here](https://help.pentaho.com/Documentation/7.0/0L0/0Y0/070) you have more documentation about kitchen and pan.
 
 # Index
 1. [Before start](https://github.com/lorenzoli/docker-pdi-ce#before-start)
