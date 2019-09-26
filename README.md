@@ -46,8 +46,7 @@ $ docker build --tag=pdi-ce .
 ```
 
 # Usage
-Before run transformation/job you have need to create them with PDI-UI or PDI-xml syntax.
-
+Before run transformation/job you have need to create them with PDI-UI or PDI-xml syntax.<br>
 After that the best usage method is the following:
 1. create jobs or transformations folder
 2. create .kjb or .ktr on this folders
@@ -60,7 +59,7 @@ $ ./goku.sh runt <path-to-ktr-file> <optional-parameters>
 ```
 **From docker cl**
 ```
-$ docker run -v <absolute-path-to-ktr-folder>:/opt/transformations pdi-ce sh ./opt/app/pan.sh -file=<path-to-ktr-file>.ktr <optional-parameters>
+$ docker run -v <absolute-path-to-ktr-folder>:/opt/transformations pdi-ce sh ./opt/data-integration/pan.sh -file=<path-to-ktr-file>.ktr <optional-parameters>
 ```
 
 ## Run job
@@ -70,5 +69,5 @@ $ ./goku.sh runj <path-to-kjb-file> <optional-parameters>
 ```
 **From docker cl**
 ```
-$ docker run -v <path-to-kjb-folder>:/opt/jobs pdi-ce sh ./opt/app/kitchen.sh -file=<path-to-kjb-file> <optional-parameters>
+$ docker run -v <path-to-kjb-folder>:/opt/jobs pdi-ce sh ./opt/data-integration/kitchen.sh -file=<path-to-kjb-file> <optional-parameters>
 ```
