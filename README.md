@@ -65,7 +65,7 @@ $ docker run -v <absolute-path-to-ktr-folder>:/opt/transformations pdi-ce sh ./o
 ## Run job
 **From ermes.sh**
 ```
-$ ./goku.sh runj <path-to-kjb-file> <optional-parameters>
+$ ./ermes.sh runj <path-to-kjb-file> <optional-parameters>
 ```
 **From docker cl**
 ```
